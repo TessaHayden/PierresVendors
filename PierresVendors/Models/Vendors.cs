@@ -25,5 +25,13 @@ namespace PierresVendors.Models
     {
       return _instances;
     }
+    public static Vendors Find(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
+    public void AddOrder(OrderItem orderItem)
+    {
+      Orders.Add(orderItem);
+    }
   }
 }
