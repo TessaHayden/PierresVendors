@@ -11,7 +11,7 @@
 <body>
   @using PierresVendors.Models;
 
-  <h3>Here are all the vendors in Pierre's database:</h3>
+  <h3>Here are all the order for the vendor @Model.Name:</h3>
 
   <ol>
     @foreach (OrderItem orders in @Model["orders"])

@@ -10,14 +10,15 @@
 
 <body>
   <h1>Add a vendor to Pierre's list</h1>
-  <form action="/vendors/@Model.Id/orders" method="post">
-    <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+  <form action="/vendors" method="post">
     <label for="vendorName">Vendor name</label>
     <input id="vendorName" name="vendorName" type="text">
     <label for="vendorDescription">Vendor description</label>
     <input id="vendorDescription" name="vendorDescription" type="text">
     <button type="submit">Add vendor</button>
   </form>
+  <p><a href="/">Back home</a></p>
+  <p><a href="/vendors">Back to vendors</a></p>
 </body>
 
 </html>
