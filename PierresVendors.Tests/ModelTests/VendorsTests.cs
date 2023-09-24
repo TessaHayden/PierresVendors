@@ -2,9 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresVendors.Models;
 using System.Collections.Generic;
 using System;
-using System.Collections.ObjectModel;
 
-namespace PierresVendors.TestTools
+namespace PierresVendors.TestsTools
 {
   [TestClass]
   public class VendorsTests : IDisposable
@@ -64,7 +63,7 @@ namespace PierresVendors.TestTools
       int quantity = 36;
       string type = "donuts";
       int cost = 2;
-      OrderItem newOrder = new OrderItem(vendorName, quantity, type, cost);
+      OrderItem newOrder = new OrderItem(vendorName, type, quantity, cost);
       List<OrderItem> newList = new List<OrderItem> { newOrder };
       string name = "Portland Bakery";
       Vendors newVendors = new Vendors(name, "null");
