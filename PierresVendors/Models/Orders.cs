@@ -4,7 +4,7 @@ namespace PierresVendors.Models
 {
   public class OrderItem
   {
-    public string Name { get; set; }
+    public string OrderName { get; set; }
     public string Type { get; set; }
     public int Cost { get; set; }
     public int Quantity { get; set; }
@@ -14,7 +14,7 @@ namespace PierresVendors.Models
 
     public OrderItem(string vendorName, string type, int cost, int quantity)
     {
-      Name = vendorName;
+      OrderName = vendorName;
       Quantity = quantity;
       Type = type;
       Cost = cost;

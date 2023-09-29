@@ -29,7 +29,7 @@ namespace PierresVendors.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendors selectedVendor = Vendors.Find(id);
-      List<OrderItem> vendorOrders = selectedVendor.Orders;
+      List<OrderItem> vendorOrders = selectedVendor.OrderList;
       model.Add("vendors", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
@@ -41,10 +41,16 @@ namespace PierresVendors.Controllers
       Vendors foundVendor = Vendors.Find(vendorId);
       OrderItem newOrder = new OrderItem(orderName, orderType, orderCost, orderQuantity);
       foundVendor.AddOrder(newOrder);
-      List<OrderItem> vendorOrders = foundVendor.Orders;
+      List<OrderItem> vendorOrders = foundVendor.OrderList;
       model.Add("orders", vendorOrders);
       model.Add("vendors", foundVendor);
       return View("show", model);
+    }
+    [HttpGet("/vendors/{vendorsId}/orders/{ordersId}/show")]
+    public ActionResult Show(int vendorId, string orderName, string orderType, int orderCost, int orderQuantity) 
+    {
+      OrderItem newOrder = new OrderItem(orderName, orderType, orderCost, orderQuantity);
+      return View(newOrder);
     }
   }
 }

@@ -8,14 +8,14 @@ namespace PierresVendors.Models
     public string Name { get; set; }
     public string Description { get; set; }
     public int Id { get; }
-    public List<OrderItem> Orders { get; set; }
+    public List<OrderItem> OrderList { get; set; }
     public Vendors(string vendorName, string vendorDescription)
     {
       Name = vendorName;
       Description = vendorDescription;
       _instances.Add(this);
       Id = _instances.Count;
-      Orders = new List<OrderItem> { };
+      OrderList = new List<OrderItem> { };
     }
     public static void ClearAll()
     {
@@ -31,7 +31,7 @@ namespace PierresVendors.Models
     }
     public void AddOrder(OrderItem orderItem)
     {
-      Orders.Add(orderItem);
+      OrderList.Add(orderItem);
     }
   }
 }

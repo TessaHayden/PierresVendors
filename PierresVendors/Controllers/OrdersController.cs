@@ -22,5 +22,6 @@ namespace PierresVendors.Controllers
       model.Add("vendors", vendor);
       return View(model);
     }
+    
   }
 }
