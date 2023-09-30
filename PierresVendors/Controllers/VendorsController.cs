@@ -47,9 +47,9 @@ namespace PierresVendors.Controllers
       return View("show", model);
     }
     [HttpGet("/vendors/{vendorsId}/orders/{ordersId}/show")]
-    public ActionResult Show(int vendorId, string orderName, string orderType, int orderCost, int orderQuantity) 
+    public ActionResult Show(string Name, string orderType, int orderCost, int orderQuantity) 
     {
-      OrderItem newOrder = new OrderItem(orderName, orderType, orderCost, orderQuantity);
+      OrderItem newOrder = new OrderItem(Name, orderType, orderCost, orderQuantity);
       return View(newOrder);
     }
   }
