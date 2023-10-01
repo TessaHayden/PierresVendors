@@ -12,9 +12,9 @@ namespace PierresVendors.Models
     public int Id { get; }
     private static List<OrderItem> _instances = new List<OrderItem> { };
 
-    public OrderItem(string Name, string type, int cost, int quantity)
+    public OrderItem(string name, string type, int cost, int quantity)
     {
-      OrderName = Name;
+      OrderName = name;
       Quantity = quantity;
       Type = type;
       Cost = cost;

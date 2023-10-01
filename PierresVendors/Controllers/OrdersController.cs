@@ -13,10 +13,10 @@ namespace PierresVendors.Controllers
       return View(vendor);
     }
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
-    public ActionResult Show(int vendorId, int orderId)
+    public ActionResult Show(int id)
     {
-      OrderItem order = OrderItem.Find(orderId);
-      Vendors vendor = Vendors.Find(vendorId);
+      OrderItem order = OrderItem.Find(id);
+      Vendors vendor = Vendors.Find(id);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("orders", order);
       model.Add("vendors", vendor);
