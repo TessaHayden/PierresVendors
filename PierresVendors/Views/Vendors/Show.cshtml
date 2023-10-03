@@ -9,17 +9,23 @@
 </head>
 
 <body>
+
   @using PierresVendors.Models;
 
-  <h3>Here are all of the orders for :</h3>
+  <h3>Here are all of the orders for @Model["vendors"].Name:</h3>
 
   <ol>
     @foreach (OrderItem orders in @Model["orders"])
     {
-      <li><a href='/vendors/@Model["vendors"].Id/orders/@orders.Id'>@Model.OrderName</a></li>
+      <li><a href='/vendors/@Model["vendors"].Id/orders/@orders.Id'>@orders.OrderName: 
+      <p>Type of baked good: @orders.Type</p>
+      <p>Cost per @orders.Type: @orders.Cost</p>
+      <p>Order Quantity: @orders.Quantity</p>
+      <p>Order Total: @orders.Total</p>
+      </a></li>
     }
   </ol>
-  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+  <p><a href='/vendors/@Model["vendors"].Id/orders/new'>Add a new order</a></p>
   <p><a href='/vendors'>Return to vendor list</a></p>
   <p><a href='/'>Return to Main Page</a></p>
 </body>

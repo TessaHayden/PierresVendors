@@ -18,6 +18,7 @@ namespace PierresVendors.Models
       Quantity = quantity;
       Type = type;
       Cost = cost;
+      Total = cost * quantity;
       _instances.Add(this);
       Id = _instances.Count;
     }
@@ -32,6 +33,10 @@ namespace PierresVendors.Models
     public static OrderItem Find(int searchId)
     {
       return _instances[searchId - 1];
+    }
+    public int OrderTotal(int cost, int quantity)
+    {
+      return Total = cost * quantity;
     }
   }
 }
