@@ -1,4 +1,4 @@
-## Pierres Vendors
+## Pierre's Vendors
 
 ##### By Tessa Hayden
 
@@ -19,19 +19,23 @@ Pierre needs an app to keep track of his vendors and his vendor's orders.
 ### Setup Instructions
 
 1. Clone this repo.
-2. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory called "ShapeTracker".
+2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "PierresVendors".
 3. In the command line, run the command "dotnet run" to compile and execute the console application. Since this is a console application, you'll interact with it through text commands in your terminal.
 4. Optionally, you can run "dotnet build" to compile this console app without running it.
+5. Open the browser to https://localhost:5001. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. Open your terminal and type: $ dotnet dev-certs https --trust
 
 ### Run Tests
 1. ~ cd PierresVendors.Tests
-2. Use command "~dotnet test"
+2. Use command "~ dotnet test"
 
 #### Link to repository:
 
 https://github.com/TessaHayden/PierresVendors.git
 
 #### Known Bugs:
+1. Does not check for redundant vendors
+2. Does not check for invalid numbers or characters for inputs
+3. Cannot delete single orders or vendor
 
 
 <sub>MIT

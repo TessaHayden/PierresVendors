@@ -22,6 +22,12 @@ namespace PierresVendors.Controllers
       model.Add("vendors", vendor);
       return View(model);
     }
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      OrderItem.ClearAll();
+      return View();
+    }
     
   }
 }
