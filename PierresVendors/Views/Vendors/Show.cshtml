@@ -14,17 +14,13 @@
 
   <h3>Here are all of the orders for @Model["vendors"].Name:</h3>
 
-  <ol>
+  <ul>
     @foreach (OrderItem orders in @Model["orders"])
     {
-      <li><a href='/vendors/@Model["vendors"].Id/orders/@orders.Id'>@orders.OrderName: 
-      <p>Type of baked good: @orders.Type</p>
-      <p>Cost per @orders.Type: @orders.Cost</p>
-      <p>Order Quantity: @orders.Quantity</p>
-      <p>Order Total: @orders.Total</p>
+      <li><a href='/vendors/@Model["vendors"].Id/orders/@orders.Id'>@orders.Id, @orders.OrderName: <p>Click for details.</p>
       </a></li>
     }
-  </ol>
+  </ul>
   <form action="/orders/delete" method="post">
     <button type="submit" name="button">Clear All orders</button>
   </form> 
